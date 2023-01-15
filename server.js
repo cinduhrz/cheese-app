@@ -14,6 +14,7 @@ const app = express()
 // MIDDLEWARE
 app.use(cors())
 app.use(morgan("dev"))
+app.use(express.json()) // to parse json bodies from client (for POST and PUT requests)
 
 
 // ROUTES
