@@ -2,7 +2,7 @@
 require("dotenv").config() // load env variables
 const { PORT, DATABASE_URL } = process.env // destructure variables
 const express = require("express")
-const mongoose = require("mongoose")
+const mongoose = require("./models/connection") // connects to db
 const cors = require("cors")
 const morgan = require("morgan")
 
