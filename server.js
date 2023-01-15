@@ -5,6 +5,7 @@ const express = require("express")
 const mongoose = require("./models/connection") // connects to db
 const cors = require("cors")
 const morgan = require("morgan")
+const Cheese = require("./models/cheese")
 
 
 // CREATE EXPRESS APP OBJECT
