@@ -6,10 +6,12 @@ const mongoose = require("mongoose")
 // DATABASE CONNECTION
 
 // Establish Connection
+mongoose.set("strictQuery", true)
 mongoose.connect(DATABASE_URL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
+
 
 // Connection Events
 mongoose.connection
