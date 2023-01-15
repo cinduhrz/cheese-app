@@ -23,6 +23,26 @@ app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
+// Cheese Index
+app.get("/cheeses", async (req, res) => {
+    try {
+        // send all cheeses as json
+        res.json(await Cheese.find({}))
+    } catch(error) {
+        res.status(400).json(error)
+    }
+})
+
+// Cheese Create
+app.post("/cheeses", async (req, res) => {
+    try {
+        // create new cheese and send it back?
+        res.json(await Cheese.create(req.body))
+    } catch(error) {
+        res.status(400).json(error)
+    }
+})
+
 
 // TURN ON SERVER
 app.listen(PORT, () => {
