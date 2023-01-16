@@ -43,6 +43,13 @@ app.delete("/cheeses/:id", async (req, res) => {
 })
 
 // Update
+app.put("/cheeses/:id", async (req, res) => {
+    try {
+        res.json(await Cheese.findByIdAndUpdate(req.params.id, req.body, { new: true }))
+    } catch(error) {
+        res.status(400).json()
+    }
+})
 
 // Create
 app.post("/cheeses", async (req, res) => {
