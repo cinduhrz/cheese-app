@@ -54,7 +54,7 @@ app.put("/cheeses/:id", async (req, res) => {
 // Create
 app.post("/cheeses", async (req, res) => {
     try {
-        // create new cheese and send it back?
+        // create new cheese and send it back to confirm it was created
         res.json(await Cheese.create(req.body))
     } catch(error) {
         res.status(400).json(error)
@@ -62,6 +62,13 @@ app.post("/cheeses", async (req, res) => {
 })
 
 // Show
+app.get("/cheeses/:id", async (req, res) => {
+    try {
+        res.json(await Cheese.findById(req.params.id))
+    } catch(error) {
+        res.status(400).json()
+    }
+})
 
 
 // TURN ON SERVER
