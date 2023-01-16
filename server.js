@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
-// Cheese Index
+// Index
 app.get("/cheeses", async (req, res) => {
     try {
         // send all cheeses as json
@@ -33,7 +33,18 @@ app.get("/cheeses", async (req, res) => {
     }
 })
 
-// Cheese Create
+// Delete
+app.delete("/cheeses/:id", async (req, res) => {
+    try{
+        res.json(await Cheese.findByIdAndDelete(req.params.id))
+    } catch(error) {
+        res.status(400).json(error)
+    }
+})
+
+// Update
+
+// Create
 app.post("/cheeses", async (req, res) => {
     try {
         // create new cheese and send it back?
@@ -42,6 +53,8 @@ app.post("/cheeses", async (req, res) => {
         res.status(400).json(error)
     }
 })
+
+// Show
 
 
 // TURN ON SERVER
