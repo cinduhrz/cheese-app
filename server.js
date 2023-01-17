@@ -24,6 +24,9 @@ app.get("/", (req, res) => {
 })
 
 // Index
+app.get("/", (req, res) => {
+    res.redirect("/cheeses")
+})
 app.get("/cheeses", async (req, res) => {
     try {
         // send all cheeses as json
